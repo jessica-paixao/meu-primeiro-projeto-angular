@@ -50,12 +50,17 @@ export class AppComponent {
     };
 
     this.usuarios.push(usuario);
-    this.limparFormulario()
+    this.limparFormulario();
   }
 
   limparFormulario() {
     this.nomeDoUsuario = '';
     this.emailDoUsuario = '';
     this.telefoneDoUsuario = '';
+  }
+
+  removerUsuario(usuario: Usuario) {
+    const indice = this.usuarios.findIndex((item) => item.id === usuario.id);
+    this.usuarios.splice(indice, 1);
   }
 }
