@@ -1,29 +1,40 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { ImportsModule } from './imports';
-import { MenuItem } from 'primeng/api';
+
+interface Usuario{
+    id?: number;
+    nome: string;
+    email: string;
+    telefone: string;
+}
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ImportsModule],
+  imports: [ImportsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  items: MenuItem[] | undefined;
+    usuarios!: Usuario[];
 
+    constructor() {}
 
     ngOnInit() {
-        this.items = [
+        this.usuarios=[
             {
-                label: 'Update',
-                icon: 'pi pi-refresh'
+                id: 1, 
+                nome: "Jéssica Paixao",
+                email: "jessicapaixao@gmail.com",
+                telefone: "(22) 9 8827-9268"
             },
             {
-                label: 'Delete',
-                icon: 'pi pi-times'
+                id: 2, 
+                nome: "Julia Lima",
+                email: "julia@gmail.com",
+                telefone: "(62) 9 8427-9568"
+
             }
-        ];
+        ]
     }
 }
