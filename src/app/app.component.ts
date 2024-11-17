@@ -30,13 +30,13 @@ export class AppComponent {
         id: 1,
         nome: 'Jéssica Paixao',
         email: 'jessicapaixao@gmail.com',
-        telefone: '(22) 9 8827-9268',
+        telefone: '+55999999999',
       },
       {
         id: 2,
         nome: 'Julia Lima',
         email: 'julia@gmail.com',
-        telefone: '(62) 9 8427-9568',
+        telefone: '+55999999999',
       },
     ];
   }
