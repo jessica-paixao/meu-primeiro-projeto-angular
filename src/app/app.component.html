@@ -1,23 +1,82 @@
-<p-toolbar>
+<div class="card mb-3">
+  <p-toolbar>
     <div class="p-toolbar-group-start">
-        <h3>Meu Primeiro Projeto</h3>
+      <h3>Meu Primeiro Projeto</h3>
     </div>
-</p-toolbar>
+  </p-toolbar>
+</div>
+
+<div>
+  <h3>Cadastro de Usuários</h3>
+</div>
+
+<div class="grid col-12 m-0 p-0 gap-1">
+  <div class="grid col-12 m-0 p-0">
+    <div class="col-3 m-0 p-0">
+      <p-floatLabel>
+        <input
+          class="w-full"
+          pInputText
+          id="nomeDoUsuario"
+          [(ngModel)]="nomeDoUsuario"
+        />
+        <label for="nomeDoUsuario">Nome</label>
+      </p-floatLabel>
+    </div>
+    <div class="col-offset-1"></div>
+    <div class="col-4 m-0 p-0">
+      <p-floatLabel>
+        <input
+          class="w-full"
+          pInputText
+          id="emailDoUsuario"
+          [(ngModel)]="emailDoUsuario"
+        />
+        <label for="emailDoUsuario">Email</label>
+      </p-floatLabel>
+    </div>
+    <div class="col-offset-1"></div>
+    <div class="col-3 m-0 p-0">
+      <p-floatLabel>
+        <input
+          class="w-full"
+          pInputText
+          id="telefoneDoUsuario"
+          [(ngModel)]="telefoneDoUsuario"
+        />
+        <label for="telefoneDoUsuario">Telefone</label>
+      </p-floatLabel>
+    </div>
+  </div>
+
+  <div class="grid col-12 m-0 p-0 mt-5">
+    <div class="col-offset-8"></div>
+    <div class="col-4 m-0 p-0 flex justify-content-end">
+      <p-button label="Cancelar" icon="pi pi-times" severity="danger" (onClick)="limparFormulario()"/>
+      <p-button class="ml-2" label="Salvar" icon="pi pi-check" (onClick)="adicionarUsuario()"/>
+    </div>
+  </div>
+</div>
+
+<div>
+  <h3>Listagem de Usuários</h3>
+</div>
+
 <p-table [value]="usuarios" [tableStyle]="{ 'min-width': '50rem' }">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>ID</th>
-            <th>NOME</th>
-            <th>EMAIL</th>
-            <th>TELEFONE</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-usuario>
-        <tr>
-            <td>{{ usuario.id}}</td>
-            <td>{{ usuario.nome }}</td>
-            <td>{{ usuario.email }}</td>
-            <td>{{ usuario.telefone }}</td>
-        </tr>
-    </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th>NOME</th>
+      <th>EMAIL</th>
+      <th>TELEFONE</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-usuario>
+    <tr>
+      <td>{{ usuario.id }}</td>
+      <td>{{ usuario.nome }}</td>
+      <td>{{ usuario.email }}</td>
+      <td>{{ usuario.telefone }}</td>
+    </tr>
+  </ng-template>
 </p-table>
